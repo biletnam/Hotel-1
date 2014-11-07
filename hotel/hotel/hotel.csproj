@@ -1,0 +1,554 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7279FC6F-382A-47B8-93C1-EAC86D04B1DA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>hotel</RootNamespace>
+    <AssemblyName>hotel</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>Resources\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Resources\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="base.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="base.Designer.cs">
+      <DependentUpon>base.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Email.cs" />
+    <Compile Include="Mapping\bron.cs" />
+    <Compile Include="Mapping\client.cs" />
+    <Compile Include="Mapping\dopuslugi.cs" />
+    <Compile Include="Mapping\hotel.cs" />
+    <Compile Include="Mapping\jurnal.cs" />
+    <Compile Include="Mapping\jurnaldopuslug.cs" />
+    <Compile Include="Mapping\jurnalnomera.cs" />
+    <Compile Include="Mapping\nomera.cs" />
+    <Compile Include="Mapping\Oplata.cs" />
+    <Compile Include="Mapping\rezerv.cs" />
+    <Compile Include="Mapping\veshi.cs" />
+    <Compile Include="Mapping\veshinomera.cs" />
+    <Compile Include="Oprogram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Oprogram.Designer.cs">
+      <DependentUpon>Oprogram.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Otchet\Otchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Otchet\Otchet.Designer.cs">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="otelDataSet.cs">
+      <DependentUpon>otelDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="otelDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>otelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RabotaOtel\Popolnenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaOtel\Popolnenie.Designer.cs">
+      <DependentUpon>Popolnenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaOtel\Porcha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaOtel\Porcha.Designer.cs">
+      <DependentUpon>Porcha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSFailami.cs" />
+    <Compile Include="RabotaSKlientomi\bron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\bron.Designer.cs">
+      <DependentUpon>bron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Bronirovanie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Bronirovanie.Designer.cs">
+      <DependentUpon>Bronirovanie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\DopUslugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\DopUslugi.Designer.cs">
+      <DependentUpon>DopUslugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\KlientBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\KlientBank.Designer.cs">
+      <DependentUpon>KlientBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\NoBron.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\NoBron.Designer.cs">
+      <DependentUpon>NoBron.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\OformlenieDopUslug.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\OformlenieDopUslug.Designer.cs">
+      <DependentUpon>OformlenieDopUslug.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\OformlenieVNomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\OformlenieVNomer.Designer.cs">
+      <DependentUpon>OformlenieVNomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Pass.Designer.cs">
+      <DependentUpon>Pass.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\SchetPdf.cs" />
+    <Compile Include="RabotaSKlientomi\Viezd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Viezd.Designer.cs">
+      <DependentUpon>Viezd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Vopros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Vopros.Designer.cs">
+      <DependentUpon>Vopros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Voprospobroni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RabotaSKlientomi\Voprospobroni.Designer.cs">
+      <DependentUpon>Voprospobroni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Firma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Firma.Designer.cs">
+      <DependentUpon>Firma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Stroka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Stroka.Designer.cs">
+      <DependentUpon>Stroka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\ADDClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\ADDClient.Designer.cs">
+      <DependentUpon>ADDClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\DeleteClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\DeleteClient.Designer.cs">
+      <DependentUpon>DeleteClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\EditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\EditClient.Designer.cs">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\VisibleClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\clients\VisibleClient.Designer.cs">
+      <DependentUpon>VisibleClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\AddDopUslugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\AddDopUslugi.Designer.cs">
+      <DependentUpon>AddDopUslugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\DeleteDopUslugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\DeleteDopUslugi.Designer.cs">
+      <DependentUpon>DeleteDopUslugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\EdidDopUslugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\EdidDopUslugi.Designer.cs">
+      <DependentUpon>EdidDopUslugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\VisibleDopUslugi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\dopuslugi\VisibleDopUslugi.Designer.cs">
+      <DependentUpon>VisibleDopUslugi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\AddNomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\AddNomer.Designer.cs">
+      <DependentUpon>AddNomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\DeleteNomera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\DeleteNomera.Designer.cs">
+      <DependentUpon>DeleteNomera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\EditNomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\EditNomer.Designer.cs">
+      <DependentUpon>EditNomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\VisibleNomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\nomera\VisibleNomer.Designer.cs">
+      <DependentUpon>VisibleNomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\ADDprik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\ADDprik.Designer.cs">
+      <DependentUpon>ADDprik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\DeletePrik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\DeletePrik.Designer.cs">
+      <DependentUpon>DeletePrik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\Editprik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\Editprik.Designer.cs">
+      <DependentUpon>Editprik.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\VisiblePrikreplenie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Prikreplenie\VisiblePrikreplenie.Designer.cs">
+      <DependentUpon>VisiblePrikreplenie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\ADDReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\ADDReserv.Designer.cs">
+      <DependentUpon>ADDReserv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\DeleteReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\DeleteReserv.Designer.cs">
+      <DependentUpon>DeleteReserv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\EditReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\EditReserv.Designer.cs">
+      <DependentUpon>EditReserv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\VisibleReserv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\Reserv\VisibleReserv.Designer.cs">
+      <DependentUpon>VisibleReserv.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\ADDSpisokVeshei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\ADDSpisokVeshei.Designer.cs">
+      <DependentUpon>ADDSpisokVeshei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\DeleteSpisokVeshei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\DeleteSpisokVeshei.Designer.cs">
+      <DependentUpon>DeleteSpisokVeshei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\EditSpisokVeshei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\EditSpisokVeshei.Designer.cs">
+      <DependentUpon>EditSpisokVeshei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\VisibleSpisokVeshei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="vnesenieinfBD\veshi\SpisokVeshi\VisibleSpisokVeshei.Designer.cs">
+      <DependentUpon>VisibleSpisokVeshei.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="base.resx">
+      <DependentUpon>base.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oprogram.resx">
+      <DependentUpon>Oprogram.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Otchet\Otchet.resx">
+      <DependentUpon>Otchet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RabotaOtel\Popolnenie.resx">
+      <DependentUpon>Popolnenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaOtel\Porcha.resx">
+      <DependentUpon>Porcha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\bron.resx">
+      <DependentUpon>bron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\Bronirovanie.resx">
+      <DependentUpon>Bronirovanie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\DopUslugi.resx">
+      <DependentUpon>DopUslugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\KlientBank.resx">
+      <DependentUpon>KlientBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\NoBron.resx">
+      <DependentUpon>NoBron.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\OformlenieDopUslug.resx">
+      <DependentUpon>OformlenieDopUslug.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\OformlenieVNomer.resx">
+      <DependentUpon>OformlenieVNomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\Pass.resx">
+      <DependentUpon>Pass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\Viezd.resx">
+      <DependentUpon>Viezd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\Vopros.resx">
+      <DependentUpon>Vopros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RabotaSKlientomi\Voprospobroni.resx">
+      <DependentUpon>Voprospobroni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Firma.resx">
+      <DependentUpon>Firma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\Stroka.resx">
+      <DependentUpon>Stroka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\clients\ADDClient.resx">
+      <DependentUpon>ADDClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\clients\DeleteClient.resx">
+      <DependentUpon>DeleteClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\clients\EditClient.resx">
+      <DependentUpon>EditClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\clients\VisibleClient.resx">
+      <DependentUpon>VisibleClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\dopuslugi\AddDopUslugi.resx">
+      <DependentUpon>AddDopUslugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\dopuslugi\DeleteDopUslugi.resx">
+      <DependentUpon>DeleteDopUslugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\dopuslugi\EdidDopUslugi.resx">
+      <DependentUpon>EdidDopUslugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\dopuslugi\VisibleDopUslugi.resx">
+      <DependentUpon>VisibleDopUslugi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\nomera\AddNomer.resx">
+      <DependentUpon>AddNomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\nomera\DeleteNomera.resx">
+      <DependentUpon>DeleteNomera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\nomera\EditNomer.resx">
+      <DependentUpon>EditNomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\nomera\VisibleNomer.resx">
+      <DependentUpon>VisibleNomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Prikreplenie\ADDprik.resx">
+      <DependentUpon>ADDprik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Prikreplenie\DeletePrik.resx">
+      <DependentUpon>DeletePrik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Prikreplenie\Editprik.resx">
+      <DependentUpon>Editprik.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Prikreplenie\VisiblePrikreplenie.resx">
+      <DependentUpon>VisiblePrikreplenie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Reserv\ADDReserv.resx">
+      <DependentUpon>ADDReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Reserv\DeleteReserv.resx">
+      <DependentUpon>DeleteReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Reserv\EditReserv.resx">
+      <DependentUpon>EditReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\Reserv\VisibleReserv.resx">
+      <DependentUpon>VisibleReserv.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\SpisokVeshi\ADDSpisokVeshei.resx">
+      <DependentUpon>ADDSpisokVeshei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\SpisokVeshi\DeleteSpisokVeshei.resx">
+      <DependentUpon>DeleteSpisokVeshei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\SpisokVeshi\EditSpisokVeshei.resx">
+      <DependentUpon>EditSpisokVeshei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="vnesenieinfBD\veshi\SpisokVeshi\VisibleSpisokVeshei.resx">
+      <DependentUpon>VisibleSpisokVeshei.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="otelDataSet.xsc">
+      <DependentUpon>otelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="otelDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>otelDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="otelDataSet.xss">
+      <DependentUpon>otelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>PublicSettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lighthouse.jpg" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль Microsoft .NET Framework 4 %28x86 и x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>Клиентский профиль .NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express Edition</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Установщик Windows 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

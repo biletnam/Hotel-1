@@ -1,0 +1,1 @@
+Data Source=.\MIKADN;AttachDbFilename=D:\hotel\otel.mdf;Integrated Security=True;Connect Timeout=30;User Instance=True
